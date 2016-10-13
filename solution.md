@@ -15,7 +15,7 @@ rm -r classes/*
 Compile tests:
 ```sh
 #!/bin/bash
-javac -classpath "classes/:lib/junit-4.11.jar" src/test/java/is/ru/stringcalculator/*.java -d classes
+javac -classpath "lib/junit-4.11.jar" src/test/java/is/ru/stringcalculator/*.java -d classes
 ```
 Unit Test:
 ```sh
@@ -48,6 +48,7 @@ public static int add(String test){
   return 0;
 }
 ```
+/Users/SveinnG/Desktop/String-Calculator/src
 
 #### Test One Number
 CalculatorTest
