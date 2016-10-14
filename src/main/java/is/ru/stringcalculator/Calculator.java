@@ -1,5 +1,8 @@
 package is.ru.stringcalculator;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Calculator {
 
 	public static int add(String text){
@@ -27,5 +30,25 @@ public class Calculator {
 		    total += toInt(number);
 		}
 		return total;
+    }
+
+    private static int negativeNumbers(String message)
+    {
+    	int negativeNumber = 0;
+        String[] numbers = splitNumbers(message);
+        List<Integer> negativeNumbers = new ArrayList<>();
+        for(String number : numbers)
+        {
+            negativeNumber = toInt(number);
+            if(negativeNumber < 0)
+            {
+                negativeNumbers.add(negativeNumber);
+            }
+        }
+        if(!negativeNumbers.isEmpty())
+        {
+            throw new IllegalArgumentException("Negatives not allowed: "+ negativeNumbers.toString());
+        }
+        return 1;
     }
 }

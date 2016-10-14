@@ -1,6 +1,7 @@
 package is.ru.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 public class CalculatorTest {
@@ -32,5 +33,15 @@ public class CalculatorTest {
 	@Test
 	public void testToHandleNewLineBetweenNumbers(){
 		assertEquals(10, Calculator.add("2\n2,6"));
+	}
+
+	@Test
+	public void testAddNegativeException() {
+		try {
+			Calculator.add("2,-4,3,-5,6,6");
+		} 
+			catch (IllegalArgumentException exeption) {
+				assertEquals("Negatives not allowed: -4,-5", exeption.getMessage());
+		}
 	}
 }
