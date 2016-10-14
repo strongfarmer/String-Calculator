@@ -44,4 +44,9 @@ public class CalculatorTest {
 				assertEquals("Negatives not allowed: -4,-5", exeption.getMessage());
 		}
 	}
+	
+	@Test
+	public void testNumbersOverThousandToBeIgnored() {
+		assertEquals(1001, Calculator.add("1,2000,1000,1500"));
+	}
 }
